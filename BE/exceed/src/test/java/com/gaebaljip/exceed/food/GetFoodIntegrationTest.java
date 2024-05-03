@@ -5,7 +5,6 @@ import static com.gaebaljip.exceed.common.util.ApiDocumentUtil.getDocumentRespon
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-import com.gaebaljip.exceed.common.EatCeedStaticMessage;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders;
 import org.springframework.test.web.servlet.ResultActions;
 
+import com.gaebaljip.exceed.common.EatCeedStaticMessage;
 import com.gaebaljip.exceed.common.IntegrationTest;
 import com.gaebaljip.exceed.infrastructure.redis.RedisAutoComplete;
 import com.gaebaljip.exceed.infrastructure.redis.RedisUtils;
@@ -44,7 +44,6 @@ public class GetFoodIntegrationTest extends IntegrationTest {
     void tearDown() {
         redisUtils.deleteData(EatCeedStaticMessage.REDIS_AUTO_COMPLETE_KEY);
     }
-
 
     @Test
     void getFoods() throws Exception {
